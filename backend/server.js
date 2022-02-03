@@ -8,9 +8,7 @@ const messageRoutes = require("./routes/messageRoutes");
 const path = require("path");
 
 const app = express();
-const port = 5000 || process.env.port;
-
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 require("./config/db");
 
@@ -47,8 +45,8 @@ if (process.env.NODE_ENV === "production") {
 app.use(notFound);
 app.use(errorHandler);
 
-const server = app.listen(port, () => {
-  console.log(`server stareted on http://localhost:${port}`);
+const server = app.listen(PORT, () => {
+  console.log(`server stareted on http://localhost:${PORT}`);
 });
 
 // const server = app.listen(
